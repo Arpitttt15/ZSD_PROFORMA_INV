@@ -1,0 +1,4 @@
+@EndUserText.label: 'Service Definition for Proforma Invoice'
+define service ZSD_PRF_INV {
+  expose ZC_PRF_INV;
+}

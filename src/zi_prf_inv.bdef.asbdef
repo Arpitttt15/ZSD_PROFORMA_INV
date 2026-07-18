@@ -1,0 +1,23 @@
+managed implementation in class zbp_i_prf_inv unique;
+strict ( 2 );
+
+define behavior for ZI_PRF_INV alias ZI_PRF_INV_doc
+with unmanaged save
+lock master
+authorization master ( instance )
+//etag master <field_name>
+{
+
+  action ( features : instance ) ZPRINT parameter ZI_PRINT_PARAM
+    result [1] $self;
+  update;
+  field ( readonly ) SalesOrder;
+
+  mapping for ztb_prfm_inv
+    {
+      salesorder     = salesorder;
+      salesorderdate = salesorderdate;
+      base64         = base64;
+      Form           = status;
+    }
+}
